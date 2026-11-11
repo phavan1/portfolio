@@ -1,0 +1,24 @@
+/* Desk scene interactions (the SVG is injected as markup). */
+.scene-wrap, .scene-wrap svg { display: block; width: 1440px; height: 900px; }
+.scene .hit { cursor: pointer; outline: none; transform-box: fill-box; transform-origin: 50% 100%; transition: transform .18s cubic-bezier(.3,1.6,.5,1); }
+.scene .hit:hover, .scene .hit:focus-visible { transform: translateY(-8px) rotate(-1.5deg); }
+.scene .hit:focus-visible { filter: drop-shadow(0 0 0 #2148E8) drop-shadow(0 0 6px #2148E8); }
+.scene .tram { animation: tram 18s linear infinite; }
+@keyframes tram { 0% { transform: translateX(-240px); } 60% { transform: translateX(260px); } 100% { transform: translateX(260px); } }
+.scene .steam { animation: steam 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+.scene .steam.s2 { animation-delay: -1.3s; }
+@keyframes steam { 0%, 100% { transform: translateY(0) scaleY(1); opacity: .9; } 50% { transform: translateY(-10px) scaleY(1.1); opacity: .35; } }
+.sip .scene .hit[data-hit="mug"] { animation: sip 1.4s ease-in-out; }
+@keyframes sip { 0%,100% { transform: none; } 30% { transform: translateY(-40px) rotate(-14deg); } 60% { transform: translateY(-40px) rotate(-18deg); } }
+.scene .hit[data-hit="contact"] > g > g:last-child { animation: ring 2.2s ease-in-out infinite; }
+@keyframes ring { 0%, 100% { opacity: 0; } 20%, 60% { opacity: 1; } }
+.zoomed .scene .hit[data-hit="contact"] > g > g:last-child { animation: none; opacity: 0; }
+
+.grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 4;
+  background-size: 256px 256px;
+  mix-blend-mode: multiply; opacity: .55;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene .tram, .scene .steam, .scene .hit[data-hit="contact"] > g > g:last-child { animation: none; }
+}

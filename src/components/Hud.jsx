@@ -13,9 +13,9 @@ export default function Hud({ where, hint }) {
   return (
     <nav aria-label="Main" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 40, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 10, padding: '12px 16px', pointerEvents: 'none' }}>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, alignItems: 'center', pointerEvents: 'auto' }}>
-        <a href="#room" aria-label="Back to the room" className="btn comic" style={{ minHeight: 42, width: 46, padding: 0, background: 'var(--cobalt)', color: 'var(--sun)', fontSize: 20 }}>PK</a>
-        {!tiny && link('room', 'Room', where === 'room')}
-        {link('library', 'Projects', where === 'library' || where === 'project')}
+        <a href="#desk" aria-label="Back to the desk" className="btn comic" style={{ minHeight: 42, width: 46, padding: 0, background: 'var(--cobalt)', color: 'var(--sun)', fontSize: 20 }}>PK</a>
+        {!tiny && link('desk', 'Desk', where === 'room')}
+        {link('projects', 'Projects', false)}
         {hint && !tiny && (
           <span className="mono" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 36, padding: '0 14px', borderRadius: 10, border: '2px solid var(--ink)', background: 'var(--cream)', fontSize: 13, fontWeight: 700 }}>{hint}</span>
         )}

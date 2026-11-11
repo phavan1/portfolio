@@ -15,11 +15,14 @@ npm run build    # makes the finished site in the dist folder
 ## Where things live
 
 - `src/data/content.js`: **all the words on the site.** Edit this to update anything. Text in [BRACKETS] shows up as a pink placeholder.
-- `src/scenes/`: the street arrival and the room.
-- `src/pages/`: the project library, the project store pages and the plain résumé.
+- `src/scenes/Arrival.jsx`: the street outside; scrolling flies you in through the window.
+- `src/os/`: the desk and **PHAVAN OS**. `Desk.jsx` is the scene and the camera, `OS.jsx` the desktop and windows, `apps.jsx` every app, `MobileOS.jsx` the phone version, `sceneMarkup.js` the drawing.
+- `src/pages/Resume.jsx`: the plain one-page résumé ("Skip the tour").
 - `public/art/`: character pictures. `public/shots/`: screenshots.
 - `design/`: the chosen look (Look 1, flat comic with grain).
 
 ## Status
 
-Stage 1 (the full room) works but is being redesigned. Next: the camera sits at the desk and the monitor fills the screen, running "PHAVAN OS", in the Look 1 style.
+Stage 2: the desk and PHAVAN OS in Look 1 (flat comic with grain). Click the screen to sit down; apps open as windows you can drag. On phones it's a home screen of apps.
+
+Every push to `main` builds and publishes the site via `.github/workflows/deploy.yml`.
