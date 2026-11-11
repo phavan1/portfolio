@@ -1,0 +1,71 @@
+:root {
+  --ink: #141414;
+  --cream: #FFF6E5;
+  --sun: #FFD447;
+  --cobalt: #2148E8;
+  --tomato: #FF5B2E;
+  --pink: #FF7AC6;
+  --mint: #7FE0B5;
+  --lilac: #B9A4FF;
+  --display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+  --comic: 'Bangers', 'Impact', sans-serif;
+  color: var(--ink);
+  font-family: var(--display);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--sun); }
+body { min-height: 100vh; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+img { display: block; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+
+.dots {
+  background-color: var(--sun);
+  background-image: radial-gradient(rgba(20,20,20,.13) 1.6px, transparent 1.7px);
+  background-size: 18px 18px;
+}
+.card {
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  box-shadow: 7px 7px 0 var(--ink);
+}
+.mono { font-family: var(--mono); }
+.comic { font-family: var(--comic); letter-spacing: .04em; }
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  border: 2px solid var(--ink); border-radius: 999px;
+  padding: 4px 11px; background: #fff;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px;
+  border: 3px solid var(--ink); border-radius: 999px;
+  font-weight: 800; font-size: 17px; text-decoration: none;
+  background: #fff; color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform .12s, box-shadow .12s;
+}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink); }
+.btn[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+.ph {
+  background: repeating-linear-gradient(-45deg,#FFE3F2,#FFE3F2 7px,#FFF6FB 7px,#FFF6FB 14px);
+  border: 2px dashed #C2185B; border-radius: 8px;
+  padding: 1px 7px; color: #8A0F42;
+  font-family: var(--mono); font-size: .86em; font-weight: 700;
+}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* room objects */
+.obj { cursor: pointer; outline: none; }
+.obj:focus-visible .obj-ring { stroke: var(--cobalt); stroke-width: 6; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

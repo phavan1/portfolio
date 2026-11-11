@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 900" width="1440" height="900">
+<defs>
+  <filter id="c-grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 .55 -.18"/>
+  </filter>
+  <pattern id="c-dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r="2.6" fill="#141414"/></pattern>
+  <pattern id="c-dotsW" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="2.6" fill="#fff" opacity=".22"/></pattern>
+  <pattern id="c-stripes" width="64" height="64" patternUnits="userSpaceOnUse"><rect width="64" height="64" fill="#FF5B2E"/><rect width="30" height="64" fill="#FF7140"/></pattern>
+  <linearGradient id="c-fadeDown" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <linearGradient id="c-fadeUp" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <mask id="c-mShadowDesk"><rect x="0" y="690" width="1440" height="140" fill="url(#c-fadeDown)"/></mask>
+  <mask id="c-mWallTop"><rect x="0" y="0" width="1440" height="220" fill="url(#c-fadeDown)"/></mask>
+  <linearGradient id="c-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1030"/><stop offset="1" stop-color="#3B3F8F"/></linearGradient>
+  <clipPath id="c-win"><rect x="40" y="70" width="230" height="330"/></clipPath>
+  <clipPath id="c-screen"><rect x="282" y="96" width="876" height="458" rx="14"/></clipPath>
+</defs>
+
+<!-- WALL -->
+<rect width="1440" height="700" fill="url(#c-stripes)"/>
+<rect width="1440" height="220" fill="url(#c-dots)" opacity=".22" mask="url(#c-mWallTop)"/>
+
+<!-- WINDOW peeking left -->
+<g>
+  <g clip-path="url(#c-win)">
+    <rect x="40" y="70" width="230" height="330" fill="url(#c-sky)"/>
+    <circle cx="120" cy="140" r="26" fill="#FFF6E5" stroke="#141414" stroke-width="4"/>
+    <g fill="#FFF6E5"><circle cx="70" cy="110" r="2"/><circle cx="200" cy="100" r="2.5"/><circle cx="230" cy="170" r="2"/><circle cx="170" cy="200" r="1.6"/></g>
+    <g fill="#1B2560" stroke="#141414" stroke-width="3">
+      <rect x="40" y="290" width="50" height="120"/><rect x="88" y="250" width="38" height="160"/>
+      <rect x="124" y="200" width="30" height="210"/><rect x="137" y="160" width="4" height="40"/>
+      <rect x="152" y="270" width="56" height="140"/><rect x="206" y="230" width="44" height="180"/>
+    </g>
+    <g fill="#FFD447"><rect x="98" y="270" width="6" height="8"/><rect x="132" y="230" width="6" height="8"/><rect x="132" y="300" width="6" height="8"/><rect x="162" y="300" width="6" height="8"/><rect x="216" y="260" width="6" height="8"/><rect x="50" y="320" width="6" height="8"/></g>
+    <g>
+      <rect x="60" y="360" width="150" height="34" rx="8" fill="#7FE0B5" stroke="#141414" stroke-width="4"/>
+      <g fill="#FFE9A8" stroke="#141414" stroke-width="2.5"><rect x="72" y="368" width="22" height="14" rx="3"/><rect x="102" y="368" width="22" height="14" rx="3"/><rect x="132" y="368" width="22" height="14" rx="3"/><rect x="162" y="368" width="22" height="14" rx="3"/></g>
+    </g>
+  </g>
+  <rect x="40" y="70" width="230" height="330" fill="none" stroke="#FFF6E5" stroke-width="16"/>
+  <rect x="32" y="62" width="246" height="346" fill="none" stroke="#141414" stroke-width="5"/>
+  <rect x="48" y="78" width="214" height="314" fill="none" stroke="#141414" stroke-width="4"/>
+  <path d="M155 78v314M48 235h214" stroke="#FFF6E5" stroke-width="10"/>
+  <path d="M155 78v314M48 235h214" stroke="#141414" stroke-width="2"/>
+  <rect x="26" y="404" width="260" height="20" rx="4" fill="#FFF6E5" stroke="#141414" stroke-width="5"/>
+</g>
+
+<!-- POSTER right -->
+<g transform="rotate(4 1330 230)">
+  <rect x="1250" y="110" width="160" height="220" fill="#2148E8" stroke="#141414" stroke-width="5"/>
+  <rect x="1250" y="110" width="160" height="220" fill="url(#c-dotsW)"/>
+  <text x="1330" y="200" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="46" fill="#FFD447" stroke="#141414" stroke-width="2" letter-spacing="2">MAKE</text>
+  <text x="1330" y="245" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="46" fill="#FFD447" stroke="#141414" stroke-width="2" letter-spacing="2">THINGS</text>
+  <text x="1330" y="300" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="14" fill="#FFF6E5">MELB · 2026</text>
+  <circle cx="1330" cy="122" r="7" fill="#FF7AC6" stroke="#141414" stroke-width="3"/>
+</g>
+
+<!-- DESK -->
+<rect x="0" y="690" width="1440" height="210" fill="#FFD447"/>
+<rect x="0" y="690" width="1440" height="210" fill="url(#c-dots)" opacity=".16"/>
+<rect x="0" y="690" width="1440" height="140" fill="url(#c-dots)" opacity=".35" mask="url(#c-mShadowDesk)"/>
+<path d="M0 690H1440" stroke="#141414" stroke-width="6"/>
+<path d="M0 712H1440" stroke="#141414" stroke-width="2" opacity=".35"/>
+
+<!-- MONITOR: hard shadow, stand, body -->
+<path d="M690 640 L 750 640 L 770 712 L 670 712 Z" fill="#E5DCCB" stroke="#141414" stroke-width="6" stroke-linejoin="round"/>
+<ellipse cx="720" cy="714" rx="170" ry="22" fill="#E5DCCB" stroke="#141414" stroke-width="6"/>
+<rect x="230" y="54" width="1000" height="602" rx="44" fill="#141414"/>
+<rect x="216" y="40" width="1000" height="602" rx="44" fill="#FFF6E5" stroke="#141414" stroke-width="7"/>
+<rect x="216" y="520" width="1000" height="122" rx="44" fill="url(#c-dots)" opacity=".12"/>
+<rect x="268" y="84" width="904" height="484" rx="20" fill="#141414"/>
+
+<!-- SCREEN: PHAVAN OS -->
+<g clip-path="url(#c-screen)">
+  <rect x="282" y="96" width="876" height="458" fill="#2148E8"/>
+  <rect x="282" y="96" width="876" height="458" fill="url(#c-dotsW)"/>
+  <circle cx="1080" cy="470" r="150" fill="#FFD447" opacity=".9" stroke="#141414" stroke-width="5"/>
+  <circle cx="1080" cy="470" r="150" fill="url(#c-dots)" opacity=".18"/>
+  <!-- menu bar -->
+  <rect x="282" y="96" width="876" height="34" fill="#FFF6E5" stroke="#141414" stroke-width="4"/>
+  <text x="300" y="119" font-family="Bangers, Impact, sans-serif" font-size="22" letter-spacing="1.5" fill="#141414">PHAVAN OS</text>
+  <text x="408" y="119" font-family="Space Mono, monospace" font-size="13" fill="#141414">File  Projects  About  Help</text>
+  <text x="1140" y="119" text-anchor="end" font-family="Space Mono, monospace" font-weight="700" font-size="13" fill="#141414">THU 9:41 PM · MELBOURNE</text>
+
+  <!-- desktop icons -->
+  <g font-family="Space Mono, monospace" font-weight="700" font-size="12" fill="#FFF6E5" text-anchor="middle">
+    <!-- col 1 -->
+    <g transform="translate(310 150)">
+      <rect width="72" height="64" rx="12" fill="#FFD447" stroke="#141414" stroke-width="4"/>
+      <rect x="16" y="20" width="40" height="26" rx="10" fill="#141414"/><path d="M27 27v12M21 33h12" stroke="#FFD447" stroke-width="4" stroke-linecap="round"/><circle cx="46" cy="30" r="3.5" fill="#FF5B2E"/><circle cx="50" cy="38" r="3.5" fill="#7FE0B5"/>
+      <rect x="-6" y="72" width="84" height="20" rx="6" fill="#141414"/><text x="36" y="86">PROJECTS</text>
+    </g>
+    <g transform="translate(310 262)">
+      <rect width="72" height="64" rx="12" fill="#FF7AC6" stroke="#141414" stroke-width="4"/>
+      <circle cx="36" cy="32" r="21" fill="#141414"/><circle cx="36" cy="32" r="13" fill="none" stroke="#3a3a3a" stroke-width="2"/><circle cx="36" cy="32" r="7" fill="#FF5B2E"/>
+      <rect x="-6" y="72" width="84" height="20" rx="6" fill="#141414"/><text x="36" y="86">MY STORY</text>
+    </g>
+    <g transform="translate(310 374)">
+      <rect width="72" height="64" rx="12" fill="#FFF6E5" stroke="#141414" stroke-width="4"/>
+      <path d="M22 12h20l10 10v32H22z" fill="#fff" stroke="#141414" stroke-width="3.5" stroke-linejoin="round"/><path d="M28 32h18M28 40h18M28 48h12" stroke="#141414" stroke-width="3"/>
+      <rect x="-6" y="72" width="84" height="20" rx="6" fill="#141414"/><text x="36" y="86">RÉSUMÉ</text>
+    </g>
+    <!-- col 2 -->
+    <g transform="translate(410 150)">
+      <rect width="72" height="64" rx="12" fill="#7FE0B5" stroke="#141414" stroke-width="4"/>
+      <path d="M14 28l22-10 22 10-22 10z" fill="#141414"/><path d="M24 33v10c8 6 16 6 24 0V33" fill="none" stroke="#141414" stroke-width="4"/><path d="M58 28v14" stroke="#141414" stroke-width="3"/>
+      <rect x="-6" y="72" width="84" height="20" rx="6" fill="#141414"/><text x="36" y="86">SCHOOL</text>
+    </g>
+    <g transform="translate(410 262)">
+      <rect width="72" height="64" rx="12" fill="#FFF07A" stroke="#141414" stroke-width="4"/>
+      <path d="M20 14h32v36H20z" fill="#FFF6E5" stroke="#141414" stroke-width="3.5"/><path d="M26 24h20M26 32h20M26 40h12" stroke="#141414" stroke-width="3"/>
+      <rect x="-6" y="72" width="84" height="20" rx="6" fill="#141414"/><text x="36" y="86">NOW</text>
+    </g>
+    <g transform="translate(410 374)">
+      <rect width="72" height="64" rx="12" fill="#FF5B2E" stroke="#141414" stroke-width="4"/>
+      <rect x="16" y="20" width="40" height="30" rx="6" fill="#FFF6E5" stroke="#141414" stroke-width="3.5"/><circle cx="36" cy="35" r="8" fill="#2148E8" stroke="#141414" stroke-width="3"/><rect x="24" y="15" width="12" height="7" fill="#141414"/>
+      <rect x="-6" y="72" width="84" height="20" rx="6" fill="#141414"/><text x="36" y="86">OFF CLOCK</text>
+    </g>
+  </g>
+
+  <!-- open window: PROJECTS.EXE -->
+  <rect x="526" y="160" width="560" height="372" rx="12" fill="#141414"/>
+  <rect x="516" y="150" width="560" height="372" rx="12" fill="#FFF6E5" stroke="#141414" stroke-width="5"/>
+  <rect x="516" y="150" width="560" height="36" rx="12" fill="#FFD447" stroke="#141414" stroke-width="5"/>
+  <rect x="519" y="172" width="554" height="14" fill="#FFD447"/>
+  <text x="534" y="175" font-family="Space Mono, monospace" font-weight="700" font-size="15" fill="#141414">PROJECTS.EXE</text>
+  <g stroke="#141414" stroke-width="3"><rect x="1000" y="161" width="16" height="16" rx="3" fill="#FFF6E5"/><rect x="1022" y="161" width="16" height="16" rx="3" fill="#FFF6E5"/><rect x="1044" y="161" width="16" height="16" rx="3" fill="#FF5B2E"/></g>
+  <path d="M516 186H1076" stroke="#141414" stroke-width="5"/>
+  <!-- sidebar -->
+  <rect x="519" y="189" width="130" height="330" fill="#F3E3C4"/>
+  <path d="M650 189V519" stroke="#141414" stroke-width="4"/>
+  <g font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="15" fill="#2148E8">
+    <rect x="519" y="204" width="130" height="30" fill="#2148E8"/><text x="532" y="225" fill="#FFF6E5">ALL</text>
+    <rect x="618" y="210" width="24" height="18" rx="4" fill="#FFD447" stroke="#141414" stroke-width="2.5"/><text x="630" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="12" fill="#141414">7</text>
+    <text x="532" y="260">SHIPPED</text><text x="532" y="290">IN PROGRESS</text><text x="532" y="320">ACADEMIC</text><text x="532" y="350">SKETCHBOOK</text>
+  </g>
+  <!-- game boxes -->
+  <rect x="653" y="189" width="420" height="330" fill="#8FA0FF"/>
+  <rect x="653" y="350" width="420" height="10" fill="#FF5B2E" stroke="#141414" stroke-width="3"/>
+  <g stroke="#141414" stroke-width="4">
+    <g transform="translate(676 206) rotate(-2)"><rect width="86" height="130" rx="8" fill="#2148E8"/><rect width="86" height="20" rx="6" fill="#FFF6E5"/><rect width="86" height="130" rx="8" fill="url(#c-dotsW)" stroke="none"/></g>
+    <g transform="translate(776 206)"><rect width="86" height="130" rx="8" fill="#FF5B2E"/><rect width="86" height="20" rx="6" fill="#FFF6E5"/></g>
+    <g transform="translate(876 206) rotate(2)"><rect width="86" height="130" rx="8" fill="#7FE0B5"/><rect width="86" height="20" rx="6" fill="#FFF6E5"/></g>
+    <g transform="translate(976 206)"><rect width="86" height="130" rx="8" fill="#141414"/><rect width="86" height="20" rx="6" fill="#FFF6E5"/></g>
+    <g transform="translate(676 372)"><rect width="86" height="130" rx="8" fill="#FF7AC6"/><rect width="86" height="20" rx="6" fill="#FFF6E5"/></g>
+    <g transform="translate(776 372) rotate(-1.5)"><rect width="86" height="130" rx="8" fill="#FFD447"/><rect width="86" height="20" rx="6" fill="#FFF6E5"/></g>
+  </g>
+  <g font-family="Space Mono, monospace" font-weight="700" font-size="9" fill="#141414"><text x="684" y="220">PK GAMES</text><text x="784" y="220">PK GAMES</text><text x="884" y="222">PK GAMES</text><text x="984" y="220">PK GAMES</text><text x="684" y="386">PK GAMES</text><text x="784" y="386">PK GAMES</text></g>
+  <image href="art/sitting.webp" xlink:href="art/sitting.webp" x="682" y="236" width="76" height="92" preserveAspectRatio="xMidYMax meet"/>
+  <image href="art/stickynote.webp" xlink:href="art/stickynote.webp" x="782" y="236" width="76" height="92" preserveAspectRatio="xMidYMax meet"/>
+  <image href="art/waving.webp" xlink:href="art/waving.webp" x="882" y="236" width="76" height="92" preserveAspectRatio="xMidYMax meet"/>
+  <text x="1019" y="300" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="40" fill="#FFD447" opacity=".7">AI</text>
+  <image href="art/onrepeat.webp" xlink:href="art/onrepeat.webp" x="682" y="400" width="76" height="92" preserveAspectRatio="xMidYMax meet"/>
+  <g font-family="Bangers, Impact, sans-serif" font-size="17" fill="#FFF6E5" stroke="#141414" stroke-width="1" letter-spacing="1"><text x="686" y="330">PREQUEL</text><text x="786" y="330">REVYOU</text><text x="886" y="330" fill="#141414" stroke="none">THIS ROOM</text></g>
+  <!-- cursor -->
+  <path d="M740 300 l0 34 9-9 7 15 7-3-7-15 13-1z" fill="#FFF6E5" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+</g>
+<rect x="282" y="96" width="876" height="458" rx="14" fill="none" stroke="#141414" stroke-width="5"/>
+<!-- screen glare -->
+<path d="M300 112 L 400 112 L 330 220 L 300 220 Z" fill="#fff" opacity=".18"/>
+
+<!-- bezel details -->
+<text x="716" y="610" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="30" letter-spacing="4" fill="#141414">PK·98</text>
+<circle cx="1150" cy="600" r="9" fill="#7FE0B5" stroke="#141414" stroke-width="4"/>
+<g stroke="#141414" stroke-width="4"><rect x="1060" y="592" width="60" height="16" rx="8" fill="#E5DCCB"/></g>
+<!-- sticker of me on the bezel -->
+<g transform="rotate(-8 330 600)">
+  <circle cx="330" cy="598" r="58" fill="#fff" stroke="#141414" stroke-width="5"/>
+  <circle cx="330" cy="598" r="48" fill="#FF7AC6" stroke="#141414" stroke-width="3"/>
+  <circle cx="330" cy="598" r="48" fill="url(#c-dotsW)"/>
+  <clipPath id="c-stk"><circle cx="330" cy="598" r="47"/></clipPath>
+  <image href="art/talking.webp" xlink:href="art/talking.webp" x="282" y="556" width="96" height="96" clip-path="url(#c-stk)" preserveAspectRatio="xMidYMin slice"/>
+</g>
+<!-- sticky notes on the bezel -->
+<g transform="rotate(7 1200 120)">
+  <rect x="1150" y="60" width="104" height="104" fill="#FFF07A" stroke="#141414" stroke-width="4"/>
+  <rect x="1150" y="60" width="104" height="22" fill="#F5DE4A" stroke="#141414" stroke-width="4"/>
+  <text x="1162" y="116" font-family="Bangers, Impact, sans-serif" font-size="30" fill="#141414">HIRE ME</text>
+  <text x="1162" y="146" font-family="Space Mono, monospace" font-weight="700" font-size="13" fill="#141414">(AI roles!)</text>
+</g>
+
+<!-- DESK PROPS -->
+<!-- keyboard -->
+<g>
+  <path d="M470 760 L 970 760 L 1000 830 L 440 830 Z" fill="#141414"/>
+  <path d="M460 750 L 960 750 L 990 820 L 430 820 Z" fill="#E5DCCB" stroke="#141414" stroke-width="6" stroke-linejoin="round"/>
+  <g stroke="#141414" stroke-width="2.5" fill="#FFF6E5"><rect x="476.0" y="758" width="25.5" height="12" rx="3"/><rect x="505.5" y="758" width="25.5" height="12" rx="3"/><rect x="535.0" y="758" width="25.5" height="12" rx="3"/><rect x="564.5" y="758" width="25.5" height="12" rx="3"/><rect x="594.0" y="758" width="25.5" height="12" rx="3"/><rect x="623.5" y="758" width="25.5" height="12" rx="3"/><rect x="653.0" y="758" width="25.5" height="12" rx="3"/><rect x="682.5" y="758" width="25.5" height="12" rx="3"/><rect x="712.0" y="758" width="25.5" height="12" rx="3"/><rect x="741.5" y="758" width="25.5" height="12" rx="3"/><rect x="771.0" y="758" width="25.5" height="12" rx="3"/><rect x="800.5" y="758" width="25.5" height="12" rx="3"/><rect x="830.0" y="758" width="25.5" height="12" rx="3"/><rect x="859.5" y="758" width="25.5" height="12" rx="3"/><rect x="889.0" y="758" width="25.5" height="12" rx="3"/><rect x="918.5" y="758" width="25.5" height="12" rx="3"/><rect x="470.0" y="774" width="24.5" height="12" rx="3"/><rect x="498.5" y="774" width="24.5" height="12" rx="3"/><rect x="526.9" y="774" width="24.5" height="12" rx="3"/><rect x="555.4" y="774" width="24.5" height="12" rx="3"/><rect x="583.9" y="774" width="24.5" height="12" rx="3"/><rect x="612.4" y="774" width="24.5" height="12" rx="3"/><rect x="640.8" y="774" width="24.5" height="12" rx="3"/><rect x="669.3" y="774" width="24.5" height="12" rx="3"/><rect x="697.8" y="774" width="24.5" height="12" rx="3"/><rect x="726.2" y="774" width="24.5" height="12" rx="3"/><rect x="754.7" y="774" width="24.5" height="12" rx="3"/><rect x="783.2" y="774" width="24.5" height="12" rx="3"/><rect x="811.6" y="774" width="24.5" height="12" rx="3"/><rect x="840.1" y="774" width="24.5" height="12" rx="3"/><rect x="868.6" y="774" width="24.5" height="12" rx="3"/><rect x="897.1" y="774" width="24.5" height="12" rx="3"/><rect x="925.5" y="774" width="24.5" height="12" rx="3"/><rect x="464.0" y="790" width="23.6" height="12" rx="3"/><rect x="491.6" y="790" width="23.6" height="12" rx="3"/><rect x="519.1" y="790" width="23.6" height="12" rx="3"/><rect x="546.7" y="790" width="23.6" height="12" rx="3"/><rect x="574.2" y="790" width="23.6" height="12" rx="3"/><rect x="601.8" y="790" width="23.6" height="12" rx="3"/><rect x="629.3" y="790" width="23.6" height="12" rx="3"/><rect x="656.9" y="790" width="23.6" height="12" rx="3"/><rect x="684.4" y="790" width="23.6" height="12" rx="3"/><rect x="712.0" y="790" width="23.6" height="12" rx="3"/><rect x="739.6" y="790" width="23.6" height="12" rx="3"/><rect x="767.1" y="790" width="23.6" height="12" rx="3"/><rect x="794.7" y="790" width="23.6" height="12" rx="3"/><rect x="822.2" y="790" width="23.6" height="12" rx="3"/><rect x="849.8" y="790" width="23.6" height="12" rx="3"/><rect x="877.3" y="790" width="23.6" height="12" rx="3"/><rect x="904.9" y="790" width="23.6" height="12" rx="3"/><rect x="932.4" y="790" width="23.6" height="12" rx="3"/><rect x="560" y="806" width="300" height="10" rx="4"/></g>
+</g>
+<!-- mug -->
+<g>
+  <path d="M120 690c0-30 30-40 10-70" fill="none" stroke="#FFF6E5" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+  <path d="M160 690c0-30 30-40 10-70" fill="none" stroke="#FFF6E5" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+  <ellipse cx="150" cy="812" rx="82" ry="14" fill="#141414" opacity=".28"/>
+  <path d="M206 730c50-4 50 66 0 60" fill="none" stroke="#141414" stroke-width="20"/>
+  <path d="M206 730c50-4 50 66 0 60" fill="none" stroke="#2148E8" stroke-width="10"/>
+  <path d="M86 700h130v96c0 14-12 20-24 20h-82c-12 0-24-6-24-20z" fill="#2148E8" stroke="#141414" stroke-width="6" stroke-linejoin="round"/>
+  <ellipse cx="151" cy="700" rx="65" ry="12" fill="#5A3A22" stroke="#141414" stroke-width="5"/>
+  <text x="151" y="772" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="36" fill="#FFD447" stroke="#141414" stroke-width="1.5">AI</text>
+</g>
+<!-- phone on a stand -->
+<g>
+  <ellipse cx="1290" cy="818" rx="80" ry="12" fill="#141414" opacity=".28"/>
+  <path d="M1240 806 L 1340 806 L 1326 780 L 1254 780 Z" fill="#141414"/>
+  <g transform="rotate(6 1290 690)">
+    <rect x="1236" y="590" width="118" height="210" rx="22" fill="#141414"/>
+    <rect x="1228" y="580" width="118" height="210" rx="22" fill="#7FE0B5" stroke="#141414" stroke-width="6"/>
+    <rect x="1242" y="596" width="90" height="170" rx="12" fill="#FFF6E5" stroke="#141414" stroke-width="4"/>
+    <text x="1287" y="640" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="11" fill="#141414">INCOMING</text>
+    <text x="1287" y="676" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="30" fill="#2148E8">SAY HI</text>
+    <circle cx="1263" cy="728" r="16" fill="#7FE0B5" stroke="#141414" stroke-width="3.5"/>
+    <circle cx="1311" cy="728" r="16" fill="#FF5B2E" stroke="#141414" stroke-width="3.5"/>
+    <path d="M1256 728 l5 5 9-10" fill="none" stroke="#141414" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="none" stroke="#141414" stroke-width="5" stroke-linecap="round"><path d="M1372 600c14 10 14 30 0 40"/><path d="M1388 588c22 18 22 46 0 64"/></g>
+</g>
+
+<!-- GRAIN over everything -->
+<rect width="1440" height="900" filter="url(#c-grain)" opacity=".55" style="mix-blend-mode:multiply"/>
+</svg>
