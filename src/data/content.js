@@ -36,9 +36,9 @@ export const story = {
 }
 
 export const education = [
-  { spine: 'RMIT', colour: '#E2231A', title: 'Master of Artificial Intelligence', place: 'RMIT University, Melbourne', years: '[YEARS]', note: '[Subjects or projects you loved]' },
-  { spine: 'VIT', colour: '#2148E8', title: 'Postgraduate Certificate in Artificial Intelligence', place: 'VIT Bangalore', years: '[YEAR]', note: '[Exact programme name]' },
-  { spine: 'SRM', colour: '#0E8A5F', title: '[UNDERGRAD DEGREE]', place: 'SRM Institute of Science and Technology, Chennai', years: '[YEARS]', note: '[Major / specialisation]' },
+  { spine: 'RMIT', colour: '#E2231A', title: 'Master of Artificial Intelligence', place: 'RMIT University, Melbourne', years: '2025 – 2027 (expected)', note: '[Subjects or projects you loved]' },
+  { spine: 'VIT', colour: '#2148E8', title: 'Postgraduate Certificate in Artificial Intelligence', place: 'VIT Bangalore', years: '2024 – 2025', note: '[Exact programme name]' },
+  { spine: 'SRM', colour: '#0E8A5F', title: 'Bachelor of Technology in Mechanical Engineering', place: 'SRM Institute of Science and Technology, Chennai', years: '2019 – 2023', note: '' },
 ]
 
 export const experience = [
