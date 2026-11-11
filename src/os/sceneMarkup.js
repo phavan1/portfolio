@@ -84,7 +84,7 @@ export function sceneMarkup(phase, base) {
 <rect x="268" y="84" width="904" height="484" rx="20" fill="#141414"/>
 
 <!-- bezel details -->
-<text x="716" y="610" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="30" letter-spacing="4" fill="#141414">PK·98</text>
+<text x="716" y="610" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="30" letter-spacing="6" fill="#141414">W98</text>
 <circle cx="1150" cy="600" r="9" fill="#7FE0B5" stroke="#141414" stroke-width="4"/>
 <g stroke="#141414" stroke-width="4"><rect x="1060" y="592" width="60" height="16" rx="8" fill="#E5DCCB"/></g>
 <!-- sticker of me on the bezel -->

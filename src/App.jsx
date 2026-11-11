@@ -1,27 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Cover from './scenes/Cover'
 import Desk from './os/Desk'
 import Resume from './pages/Resume'
-import { appById } from './os/apps'
+import { AboutPage, ContactPage, IdeasPage, NowPage, OffClockPage, ProjectPage, ProjectsPage, SchoolPage, StoryPage, WorkPage } from './pages/sections'
 import { useHashRoute } from './hooks'
 
-// Routes (plain hashes): none = the desk (with the comic cover on first
-// arrival), an app id (#projects, #story…), #project-prequel, #resume.
+const PAGES = {
+  projects: ProjectsPage, school: SchoolPage, work: WorkPage, story: StoryPage, now: NowPage,
+  ideas: IdeasPage, offclock: OffClockPage, contact: ContactPage, about: AboutPage,
+}
+
+// Routes (plain hashes): none = the desk (the comic cover shows on arrival),
+// a page (#projects, #story…), #project-prequel, #resume.
 export default function App() {
   const route = useHashRoute()
   const [coverDone, setCoverDone] = useState(() => route !== '' && route !== 'desk')
+  const last = useRef(route) // the route shown before this one
+  const cameFromPage = last.current !== route && last.current !== '' && last.current !== 'desk'
+  useEffect(() => { last.current = route }, [route])
 
-  if (route.startsWith('resume')) return <Resume autoPrint={route === 'resume-print'} />
-
-  let desk
-  if (route.startsWith('project-')) desk = <Desk key="desk" initialApp="projects" initialProject={route.slice('project-'.length)} />
-  else if (route === 'library') desk = <Desk key="desk" initialApp="projects" />
-  else if (appById(route)) desk = <Desk key="desk" initialApp={route} />
-  else desk = <Desk key="desk" />
+  let page = null
+  if (route.startsWith('resume')) page = <Resume autoPrint={route === 'resume-print'} />
+  else if (route.startsWith('project-')) page = <ProjectPage key={route} id={route.slice('project-'.length)} />
+  else if (route === 'library') page = <ProjectsPage />
+  else if (PAGES[route]) { const P = PAGES[route]; page = <P /> }
+  if (page) return page
 
   return (
     <>
-      {desk}
+      <Desk returning={cameFromPage} />
       {!coverDone && <Cover onOpen={() => setCoverDone(true)} />}
     </>
   )

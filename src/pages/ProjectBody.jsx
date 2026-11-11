@@ -18,31 +18,31 @@ const Section = ({ title, children, tint = '#fff', delay = 0 }) => (
 
 const Empty = ({ what }) => <span className="ph">[{what}]</span>
 
-export default function ProjectBody({ id, onBack }) {
+export default function ProjectBody({ id }) {
   const p = projects.find((x) => x.id === id)
   const [big, setBig] = useState(null)
   if (!p) return <div style={{ padding: 40, textAlign: 'center' }}>That game isn’t in the library.</div>
 
   return (
-    <div className="dots" style={{ minHeight: '100%', paddingBottom: 8 }}>
+    <div>
 
       {/* hero banner */}
       <motion.header
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-        style={{ padding: '16px 16px 0' }}
+        style={{}}
       >
         <div className="card" style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', background: p.cover.bg }}>
-          <div style={{ flex: '0 0 200px', minHeight: 240, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', backgroundImage: 'radial-gradient(rgba(255,255,255,.25) 2px, transparent 2.2px)', backgroundSize: '14px 14px', borderRight: '3px solid var(--ink)', paddingTop: 24 }}>
+          <div style={{ flex: '1 1 320px', minHeight: 340, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', backgroundImage: 'radial-gradient(rgba(255,255,255,.25) 2px, transparent 2.2px)', backgroundSize: '14px 14px', borderRight: '3px solid var(--ink)', paddingTop: 24 }}>
             {p.cover.art
-              ? <motion.img src={art(p.cover.art)} alt="" initial={{ y: 40 }} animate={{ y: 0 }} transition={{ type: 'spring', stiffness: 200, damping: 16, delay: 0.15 }} style={{ maxHeight: 230, maxWidth: '86%' }} />
+              ? <motion.img src={art(p.cover.art)} alt="" initial={{ y: 40 }} animate={{ y: 0 }} transition={{ type: 'spring', stiffness: 200, damping: 16, delay: 0.15 }} style={{ maxHeight: 330, maxWidth: '80%' }} />
               : <span className="comic" style={{ fontSize: 140, color: p.cover.ink, opacity: 0.4, alignSelf: 'center' }}>AI</span>}
           </div>
-          <div style={{ flex: '999 1 300px', minWidth: 0, background: 'var(--cream)', padding: 22, display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <div style={{ flex: '999 1 440px', minWidth: 0, background: 'var(--cream)', padding: 'clamp(22px, 4vw, 40px)', display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               <span className="tag" style={{ background: 'var(--sun)' }}>{statusLabels[p.status]}</span>
               <span className="tag">{p.kind}</span>
             </div>
-            <h1 style={{ margin: 0, fontWeight: 800, fontSize: 48, lineHeight: 0.9, textTransform: 'uppercase', letterSpacing: '-.02em' }}><T>{p.title}</T></h1>
+            <h1 style={{ margin: 0, fontWeight: 800, fontSize: 'clamp(48px, 7vw, 96px)', lineHeight: 0.9, textTransform: 'uppercase', letterSpacing: '-.02em' }}><T>{p.title}</T></h1>
             {p.quote && <p style={{ margin: 0, fontSize: 21, fontStyle: 'italic' }}>{p.quote}</p>}
             <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5 }}><T>{p.blurb}</T></p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 4 }}>
@@ -50,15 +50,15 @@ export default function ProjectBody({ id, onBack }) {
                 ? <a className="btn" href={p.play} target="_blank" rel="noreferrer" style={{ background: 'var(--mint)', fontSize: 19 }}>▶ Play now</a>
                 : <span className="btn" aria-disabled="true" style={{ fontSize: 17 }}>{p.status === 'sketch' ? 'Not built yet' : <><span className="ph">[LIVE LINK]</span></>}</span>}
               {p.code && <a className="btn" href={p.code} target="_blank" rel="noreferrer">Code on GitHub</a>}
-              {onBack && <button className="btn" onClick={onBack} style={{ background: 'var(--lilac)' }}>← Library</button>}
+              <a className="btn" href="#projects" style={{ background: 'var(--lilac)' }}>← All projects</a>
             </div>
           </div>
         </div>
       </motion.header>
 
-      <div style={{ padding: '24px 16px 24px', display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
+      <div style={{ padding: '28px 0 0', display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
         {/* main column */}
-        <div style={{ flex: '999 1 440px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <div style={{ flex: '999 1 560px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24 }}>
           <Section title="Screenshots" tint="#1B2560">
             {p.shots.length ? (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 16 }}>
@@ -98,7 +98,7 @@ export default function ProjectBody({ id, onBack }) {
         </div>
 
         {/* side column */}
-        <div style={{ flex: '1 1 260px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <div style={{ flex: '1 1 300px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24 }}>
           <Section title="System requirements" tint="var(--cream)">
             {p.requirements.length ? (
               <dl style={{ margin: 0, display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '10px 14px', fontSize: 16 }}>
