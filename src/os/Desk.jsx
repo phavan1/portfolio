@@ -10,12 +10,10 @@ import './desk.css'
 // monitor fills the view, so text inside the apps is easy to read.
 function camFor(w, h, zoomed) {
   if (!zoomed) {
-    const contain = Math.min(w / 1440, h / 900)
-    const cover = Math.max(w / 1440, h / 900)
-    const s = Math.min(cover, contain * 1.15)
+    const s = Math.min(w / 1440, h / 900) * 0.88
     return { s, x: (w - 1440 * s) / 2, y: (h - 900 * s) / 2 }
   }
-  const s = Math.min(w / 1000, h / 590)
+  const s = Math.min(w / 1180, h / 700)
   const cx = SCREEN.x + SCREEN.w / 2
   const cy = SCREEN.y + SCREEN.h / 2 + 18
   return { s, x: w / 2 - cx * s, y: h / 2 - cy * s }
@@ -65,7 +63,10 @@ function DeskScene({ initialApp, initialProject }) {
   const deskLine = cam.y + 690 * cam.s
 
   return (
-    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: `linear-gradient(#FF6636 0 ${deskLine}px, #FFD447 ${deskLine}px)` }}>
+    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: '#FFD447' }}>
+      {/* the wall and desk carry on past the edges of the drawing */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, top: 0, height: deskLine, background: `repeating-linear-gradient(90deg, #FF7140 0 ${30 * cam.s}px, #FF5B2E ${30 * cam.s}px ${64 * cam.s}px)`, backgroundPositionX: cam.x }} />
+      <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, top: deskLine - 3 * cam.s, bottom: 0, borderTop: `${6 * cam.s}px solid #141414`, backgroundImage: 'radial-gradient(rgba(20,20,20,.16) 26%, transparent 27%)', backgroundSize: `${12 * cam.s}px ${12 * cam.s}px`, backgroundPosition: `${cam.x}px ${cam.y}px` }} />
       <MotionConfig transformPagePoint={(p) => ({ x: p.x / cam.s, y: p.y / cam.s })}>
         <motion.div
           initial={{ x: cam.x, y: cam.y + 40, scale: cam.s, opacity: 0 }}

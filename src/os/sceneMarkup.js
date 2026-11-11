@@ -29,7 +29,7 @@ export function sceneMarkup(phase, base) {
 
 <!-- WALL -->
 <rect width="1440" height="700" fill="url(#c-stripes)"/>
-<rect width="1440" height="220" fill="url(#c-dots)" opacity=".22" mask="url(#c-mWallTop)"/>
+
 
 <!-- WINDOW peeking left -->
 <g>
@@ -71,9 +71,9 @@ export function sceneMarkup(phase, base) {
 <!-- DESK -->
 <rect x="0" y="690" width="1440" height="210" fill="#FFD447"/>
 <rect x="0" y="690" width="1440" height="210" fill="url(#c-dots)" opacity=".16"/>
-<rect x="0" y="690" width="1440" height="140" fill="url(#c-dots)" opacity=".35" mask="url(#c-mShadowDesk)"/>
+
 <path d="M0 690H1440" stroke="#141414" stroke-width="6"/>
-<path d="M0 712H1440" stroke="#141414" stroke-width="2" opacity=".35"/>
+
 
 <!-- MONITOR: hard shadow, stand, body -->
 <path d="M690 640 L 750 640 L 770 712 L 670 712 Z" fill="#E5DCCB" stroke="#141414" stroke-width="6" stroke-linejoin="round"/>

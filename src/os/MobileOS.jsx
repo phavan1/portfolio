@@ -13,7 +13,8 @@ export default function MobileOS({ initialApp, initialProject }) {
 
   useEffect(() => {
     const name = !open ? 'desk' : open.project ? `project-${open.project}` : open.app
-    if (window.location.hash !== `#${name}`) history.replaceState(null, '', `#${name}`)
+    const url = name === 'desk' ? window.location.pathname + window.location.search : `#${name}`
+    if ((window.location.hash || '#desk') !== `#${name}`) history.replaceState(null, '', url)
   }, [open])
 
   const clock = new Intl.DateTimeFormat('en-AU', { timeZone: 'Australia/Melbourne', hour: 'numeric', minute: '2-digit' }).format(new Date())

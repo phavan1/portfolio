@@ -100,7 +100,8 @@ export default function OS({ zoomed, onWantZoom, onDesk, launch }) {
   useEffect(() => {
     const top = [...wins].sort((a, b) => b.z - a.z)[0]
     const name = !zoomed || !top ? 'desk' : top.project ? `project-${top.project}` : top.app
-    if (window.location.hash !== `#${name}`) history.replaceState(null, '', `#${name}`)
+    const url = name === 'desk' ? window.location.pathname + window.location.search : `#${name}`
+    if ((window.location.hash || '#desk') !== `#${name}`) history.replaceState(null, '', url)
   }, [wins, zoomed])
 
   const focus = (key) => setWins((ws) => {
